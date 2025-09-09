@@ -3,13 +3,13 @@ frontend:
   phases:
     preBuild:
       commands:
-        # Use npm install instead of npm ci to avoid strict lockfile errors
+        - nvm install 20
+        - nvm use 20
         - npm install
     build:
       commands:
         - npm run build
   artifacts:
-    # Vite outputs to "dist"
     baseDirectory: dist
     files:
       - '**/*'
